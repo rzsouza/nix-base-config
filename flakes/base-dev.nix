@@ -2,7 +2,6 @@
   home.packages = with pkgs; [
     htop
     killall
-    chromium
     tldr
     neovim
     zsh
@@ -32,7 +31,7 @@
         "bmanlajnpdncmhfkiccmbgeocgbncfln" # Slinky Elegant Theme
       ];
       
-      commandLineAgs = [
+      commandLineArgs = [
         "--restore-last-session"
         "--enable-spell-checking"
         "--spelling-languages=en-NZ,en-GB,pt-BR"
@@ -40,4 +39,4 @@
     };
   };  
 
-};
+}
