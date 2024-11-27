@@ -5,6 +5,7 @@
     tldr
     neovim
     zsh
+    lazygit
   ];
    
   programs = {
