@@ -6,6 +6,7 @@
     neovim
     zsh
     lazygit
+    ripgrep
   ];
    
   programs = {
