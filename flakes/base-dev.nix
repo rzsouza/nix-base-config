@@ -31,10 +31,6 @@
 	vi = "nvim";
 	nfu = "nix flake update";
       };
-
-      zplug = {
-        enable = true;
-      };
     };
 
     git = {
