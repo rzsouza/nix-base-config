@@ -8,10 +8,31 @@
     lazygit
     ripgrep
     fzf
-    zoxide
   ];
    
   programs = {
+    zsh = {
+      enable = true;
+      enableCompletions = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
+
+      history.size = 10000;
+
+      shellAliases = {
+        gl = "git pull";
+	gp = "git push";
+	gst = "git status";
+	vim = "nvim";
+	vi = "nvim";
+	nfu = "nix flake update";
+      };
+
+      zplug = {
+        enable = true;
+      };
+    };
+
     git = {
       enable = true;
       
@@ -23,6 +44,11 @@
         help.format = "html";
         core.pager = "less --LONG-PROMPT --tabs=3 --quit-at-eof --quit-if-one-screen --tilde --jump-target=3 --ignore-case --status-column";
       };
+    };
+
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
     };
     
     chromium = {
