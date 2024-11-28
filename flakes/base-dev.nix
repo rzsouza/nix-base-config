@@ -7,6 +7,8 @@
     zsh
     lazygit
     ripgrep
+    fzf
+    zoxide
   ];
    
   programs = {
