@@ -13,11 +13,15 @@
   programs = {
     zsh = {
       enable = true;
-      enableCompletions = true;
-      autosuggestions.enable = true;
-      syntaxHighlighting.enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
 
-      history.size = 10000;
+      defaultKeymap = "viins";
+
+      history = { 
+        append = true;
+        size = 10000;
+      };
 
       shellAliases = {
         gl = "git pull";
