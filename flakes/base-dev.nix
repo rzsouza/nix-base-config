@@ -8,9 +8,14 @@
     lazygit
     ripgrep
     fzf
+    starship
   ];
    
   programs = {
+    starship = {
+      enable = true;
+    };
+
     zsh = {
       enable = true;
       enableCompletion = true;
@@ -30,6 +35,7 @@
 	vim = "nvim";
 	vi = "nvim";
 	nfu = "nix flake update";
+	cd = "z";
       };
     };
 
