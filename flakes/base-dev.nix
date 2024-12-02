@@ -7,8 +7,10 @@
     lazygit
     ripgrep
     starship
+    nerd-fonts.jetbrains-mono
+    
   ];
-   
+
   programs = {
     starship = {
       enable = true;
@@ -27,6 +29,7 @@
       };
 
       shellAliases = {
+        ga = "git add --all";
         gc = "git commit --verbose";
         gd = "git diff";
 	gdca = "git diff --cached";
@@ -70,6 +73,26 @@
     fzf = {
       enable = true;
       enableZshIntegration = true;
+    };
+
+    wezterm = {
+      enable = true;
+
+      extraConfig = ''
+        local wezterm = require 'wezterm'
+        local config = wezterm.config_builder()
+
+        config.use_fancy_tab_bar = false
+        config.hide_tab_bar_if_only_one_tab = true
+        config.window_decorations = "RESIZE"
+        config.native_macos_fullscreen_mode = true
+        config.enable_wayland = false;
+        config.front_end = "WebGpu"
+        config.color_scheme = "Catppuccin Mocha"
+        config.font = wezterm.font("JetBrains Mono")
+
+        return config
+      '';
     };
 
     chromium = {
