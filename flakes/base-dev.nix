@@ -8,7 +8,6 @@
     ripgrep
     starship
     nerd-fonts.jetbrains-mono
-    
   ];
 
   programs = {
@@ -103,6 +102,7 @@
         "eimadpbcbfnmbkopoojfekhnkhdbieeh" # Dark Reader
         "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
         "bmanlajnpdncmhfkiccmbgeocgbncfln" # Slinky Elegant Theme
+	"hkgfoiooedgoejojocmhlaklaeopbecg" # Picture-in-Picture by Google
       ];
       
       commandLineArgs = [
