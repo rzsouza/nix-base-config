@@ -8,6 +8,7 @@
     ripgrep
     starship
     nerd-fonts.jetbrains-mono
+#    jetbrains.idea-ultimate
   ];
 
   programs = {
@@ -29,18 +30,22 @@
 
       shellAliases = {
         ga = "git add --all";
+	gco = "git checkout";
+	gcb = "git checkout -b";
+	gcm = "git checkout main";
         gc = "git commit --verbose";
+	gcam = "git commit --all --message";
         gd = "git diff";
 	gdca = "git diff --cached";
 	gf = "git fetch";
         gl = "git pull";
 	gp = "git push";
-	gst = "git status";
+        gpsup = "git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)";
+        gst = "git status";
 	gm = "git merge";
-	gmom = "git merge origin/$(git_main_branch)";
+	gmom = "git merge origin/main";
 	gma = "git merge --abort";
 	glog = "git log --oneline --decorate --graph";
-	gpsup = "git push --set-upstream origin $(git_current_branch)";
 	gstl = "git stash list";
 	gstp = "git stash pop";
 	gsta = "git stash push";
