@@ -19,6 +19,7 @@
     zsh = {
       enable = true;
       enableCompletion = true;
+      syntaxHighlighting.enable = true;
       autosuggestion.enable = true;
 
       defaultKeymap = "viins";
