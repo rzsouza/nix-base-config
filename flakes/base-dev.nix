@@ -8,7 +8,7 @@
     ripgrep
     starship
     nerd-fonts.jetbrains-mono
-#    jetbrains.idea-ultimate
+    jetbrains.idea-ultimate
   ];
 
   programs = {
