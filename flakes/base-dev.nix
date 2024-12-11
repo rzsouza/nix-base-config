@@ -14,6 +14,12 @@
     nushell = {
       enable = true;
 
+      extraConfig = ''
+        $env.config = {
+	  show_banner: false
+	}
+      '';
+
       shellAliases = {
         ga = "git add --all";
 	gco = "git checkout";
