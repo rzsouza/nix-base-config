@@ -11,12 +11,45 @@
   ];
 
   programs = {
+    nushell = {
+      enable = true;
+
+      shellAliases = {
+        ga = "git add --all";
+	gco = "git checkout";
+	gcb = "git checkout -b";
+	gcm = "git checkout main";
+        gc = "git commit --verbose";
+	gcam = "git commit --all --message";
+        gd = "git diff";
+	gdca = "git diff --cached";
+	gf = "git fetch";
+        gl = "git pull";
+	gp = "git push";
+        #gpsup = "git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)";
+        gst = "git status";
+	gm = "git merge";
+	gmom = "git merge origin/main";
+	gma = "git merge --abort";
+	glog = "git log --oneline --decorate --graph";
+	gstl = "git stash list";
+	gstp = "git stash pop";
+	gsta = "git stash push";
+	vim = "nvim";
+	vi = "nvim";
+	nfu = "nix flake update";
+	cd = "z";
+      };
+    };
+
     starship = {
       enable = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
     };
 
     zsh = {
-      enable = true;
+      enable = false;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
       autosuggestion.enable = true;
@@ -71,12 +104,16 @@
 
     zoxide = {
       enable = true;
-      enableZshIntegration = true;
     };
 
     fzf = {
       enable = true;
       enableZshIntegration = true;
+    };
+
+    carapace = {
+      enable = true;
+      enableNushellIntegration = true;
     };
 
     wezterm = {
