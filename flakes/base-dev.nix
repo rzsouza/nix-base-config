@@ -18,6 +18,10 @@
         $env.config = {
 	  show_banner: false
 	}
+
+	def git_current_branch [] {
+          git branch --show-current
+        }
       '';
 
       shellAliases = {
@@ -32,7 +36,7 @@
 	gf = "git fetch";
         gl = "git pull";
 	gp = "git push";
-        #gpsup = "git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)";
+        gpsup = "git push --set-upstream origin (git_current_branch)";
         gst = "git status";
 	gm = "git merge";
 	gmom = "git merge origin/main";
