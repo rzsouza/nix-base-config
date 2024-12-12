@@ -133,9 +133,10 @@
         local wezterm = require 'wezterm'
         local config = wezterm.config_builder()
 
+        config.default_prog = { 'nu' } 
         config.use_fancy_tab_bar = false
-        config.hide_tab_bar_if_only_one_tab = true
-        config.window_decorations = "RESIZE"
+        config.hide_tab_bar_if_only_one_tab = true 
+        config.window_decorations = "TITLE | RESIZE"
         config.native_macos_fullscreen_mode = true
         config.enable_wayland = false;
         config.front_end = "WebGpu"
