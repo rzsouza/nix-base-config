@@ -1,4 +1,11 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+let
+  # Create a custom Chromium build with all necessary media features
+  myChromium = pkgs.chromium.override {
+    enableWideVine = true;
+  };
+in
+{
   home.packages = with pkgs; [
     htop
     killall
@@ -8,6 +15,7 @@
     ripgrep
     starship
     nerd-fonts.jetbrains-mono
+    widevine-cdm # for DRM content like Netflix 
   ];
 
   programs = {
@@ -149,7 +157,8 @@
 
     chromium = {
       enable = true;
-      
+      package = myChromium;
+
       extensions = [
         "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
         "eimadpbcbfnmbkopoojfekhnkhdbieeh" # Dark Reader
@@ -162,8 +171,8 @@
         "--restore-last-session"
         "--enable-spell-checking"
         "--spelling-languages=en-NZ,en-GB,pt-BR"
+        "--enable-features=EnableWidevineCdm"
       ];
     };
   };  
-
 }
