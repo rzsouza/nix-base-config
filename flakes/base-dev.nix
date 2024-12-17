@@ -15,7 +15,7 @@ in
     ripgrep
     starship
     nerd-fonts.jetbrains-mono
-    asdf
+    asdf-vm
 #    widevine-cdm # for DRM content like Netflix 
   ];
 
