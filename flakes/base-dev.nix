@@ -84,8 +84,7 @@ in
       };
 
       initExtra = ''
-        let-env ASDF_DIR = "${pkgs.asdf-vm}/share/asdf-vm"
-        source-env ${pkgs.asdf-vm}/share/asdf-vm/asdf.nu
+        . ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
       '';
 
       shellAliases = {
