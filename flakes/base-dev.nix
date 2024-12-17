@@ -31,6 +31,9 @@ in
 	def git_current_branch [] {
           git branch --show-current
         }
+
+	let-env ASDF_DIR = "${pkgs.asdf-vm}/share/asdf-vm"
+        source-env ${pkgs.asdf-vm}/share/asdf-vm/asdf.nu
       '';
 
       shellAliases = {
@@ -79,6 +82,11 @@ in
         append = true;
         size = 10000;
       };
+
+      initExtra = ''
+        let-env ASDF_DIR = "${pkgs.asdf-vm}/share/asdf-vm"
+        source-env ${pkgs.asdf-vm}/share/asdf-vm/asdf.nu
+      '';
 
       shellAliases = {
         ga = "git add --all";
