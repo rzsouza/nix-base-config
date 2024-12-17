@@ -32,8 +32,8 @@ in
           git branch --show-current
         }
 
-	let-env ASDF_DIR = "${pkgs.asdf-vm}/share/asdf-vm"
-        source-env ${pkgs.asdf-vm}/share/asdf-vm/asdf.nu
+	$env.ASDF_DIR = "${pkgs.asdf-vm}/share/asdf-vm"
+        source ${pkgs.asdf-vm}/share/asdf-vm/asdf.nu
       '';
 
       shellAliases = {
