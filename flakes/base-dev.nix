@@ -16,7 +16,6 @@ in
     starship
     nerd-fonts.jetbrains-mono
     asdf-vm
-    sublime4
 #    widevine-cdm # for DRM content like Netflix 
   ];
 
