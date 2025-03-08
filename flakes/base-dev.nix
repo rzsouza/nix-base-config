@@ -34,10 +34,10 @@ in
 	  hooks: {
             pre_prompt: [{
               code: "
-                let-env direnv = (direnv export json | from json)
-                if ($direnv | length) > 0 {
-                  $direnv | items {|key, value|
-                    let-env $key = $value
+                let direnv_output = (direnv export json | from json)
+                if ($direnv_output | length) > 0 {
+                  $direnv_output | items {|key, value|
+                    $env.$key = $value
                   }
                 }
               "
