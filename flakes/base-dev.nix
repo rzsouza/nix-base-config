@@ -31,21 +31,10 @@ in
       extraConfig = ''
         $env.config = {
 	  show_banner: false
-	}
-
-	def git_current_branch [] {
-          git branch --show-current
-        }
-
-	$env.ASDF_DIR = "${pkgs.asdf-vm}/share/asdf-vm"
-        source ${pkgs.asdf-vm}/share/asdf-vm/asdf.nu
-
-        # Direnv integration
-        let-env config = {
-          hooks: {
+	  hooks: {
             pre_prompt: [{
               code: "
-                let direnv = (direnv export json | from json)
+                let-env direnv = (direnv export json | from json)
                 if ($direnv | length) > 0 {
                   $direnv | items {|key, value|
                     let-env $key = $value
@@ -54,7 +43,14 @@ in
               "
             }]
           }
+	}
+
+	def git_current_branch [] {
+          git branch --show-current
         }
+
+	$env.ASDF_DIR = "${pkgs.asdf-vm}/share/asdf-vm"
+        source ${pkgs.asdf-vm}/share/asdf-vm/asdf.nu
       '';
 
       shellAliases = {
