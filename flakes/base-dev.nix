@@ -23,7 +23,7 @@ in
     direnv = {
       enable = true;
       nix-direnv.enable = true;
-    }
+    };
 
     nushell = {
       enable = true;
