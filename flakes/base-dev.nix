@@ -39,6 +39,22 @@ in
 
 	$env.ASDF_DIR = "${pkgs.asdf-vm}/share/asdf-vm"
         source ${pkgs.asdf-vm}/share/asdf-vm/asdf.nu
+
+        # Direnv integration
+        let-env config = {
+          hooks: {
+            pre_prompt: [{
+              code: "
+                let direnv = (direnv export json | from json)
+                if ($direnv | length) > 0 {
+                  $direnv | items {|key, value|
+                    let-env $key = $value
+                  }
+                }
+              "
+            }]
+          }
+        }
       '';
 
       shellAliases = {
