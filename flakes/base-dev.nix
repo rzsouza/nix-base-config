@@ -31,18 +31,18 @@ in
       extraConfig = ''
         $env.config = {
 	  show_banner: false
-	  hooks: {
-            pre_prompt: [{
-              code: "
-                let direnv_output = (direnv export json | from json)
-                if ($direnv_output | length) > 0 {
-                  $direnv_output | items {|key, value|
-                    $env.$key = $value
-                  }
+	    hooks: {
+              pre_prompt: [{ ||
+                if (which direnv | is-empty) {
+                  return
                 }
-              "
-            }]
-          }
+
+                direnv export json | from json | default {} | load-env
+                if 'ENV_CONVERSIONS' in $env and 'PATH' in $env.ENV_CONVERSIONS {
+                  $env.PATH = do $env.ENV_CONVERSIONS.PATH.from_string $env.PATH
+                }
+              }]
+            }
 	}
 
 	def git_current_branch [] {
