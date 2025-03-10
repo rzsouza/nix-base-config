@@ -15,8 +15,7 @@ in
     ripgrep
     starship
     nerd-fonts.jetbrains-mono
-    asdf-vm
-#    widevine-cdm # for DRM content like Netflix 
+#    widevine-cdm # for DRM content like Netflix
   ];
 
   programs = {
@@ -48,9 +47,6 @@ in
 	def git_current_branch [] {
           git branch --show-current
         }
-
-	$env.ASDF_DIR = "${pkgs.asdf-vm}/share/asdf-vm"
-        source ${pkgs.asdf-vm}/share/asdf-vm/asdf.nu
       '';
 
       shellAliases = {
@@ -99,10 +95,6 @@ in
         append = true;
         size = 10000;
       };
-
-      initExtra = ''
-        . ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
-      '';
 
       shellAliases = {
         ga = "git add --all";
