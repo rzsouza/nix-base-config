@@ -10,7 +10,6 @@ in
     htop
     killall
     tldr
-    neovim
     lazygit
     ripgrep
     starship
@@ -23,6 +22,16 @@ in
     direnv = {
       enable = true;
       nix-direnv.enable = true;
+    };
+
+    neovim = {
+      enable = true;
+
+      extraConfig = ''
+        set clipboard+=unnamedplus
+      '';
+
+      extraPackages = with pkgs; [ wl-clipboard ];
     };
 
     nushell = {
