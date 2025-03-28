@@ -15,6 +15,7 @@ in
     starship
     nerd-fonts.jetbrains-mono
     devenv
+    zeditor
 #    widevine-cdm # for DRM content like Netflix
   ];
 
