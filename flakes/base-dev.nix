@@ -17,6 +17,7 @@ in
     devenv
     zed-editor
     mise
+    unzip
 #    widevine-cdm # for DRM content like Netflix
   ];
 
