@@ -16,6 +16,7 @@ in
     nerd-fonts.jetbrains-mono
     devenv
     zed-editor
+    mise
 #    widevine-cdm # for DRM content like Netflix
   ];
 
