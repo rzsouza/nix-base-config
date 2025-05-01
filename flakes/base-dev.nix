@@ -179,7 +179,7 @@ in
         config.enable_wayland = false;
         config.front_end = "WebGpu"
         config.color_scheme = "Catppuccin Mocha"
-        config.font = wezterm.font("JetBrains Mono")
+        config.font = wezterm.font("JetBrains Mono NF")
 
         return config
       '';
