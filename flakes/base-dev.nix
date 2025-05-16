@@ -18,6 +18,7 @@ in
     zed-editor
     mise
     unzip
+    firefox
 #    widevine-cdm # for DRM content like Netflix
   ];
 
