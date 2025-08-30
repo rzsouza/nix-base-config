@@ -19,6 +19,7 @@ in
     mise
     unzip
     firefox
+    claude-code
 #    widevine-cdm # for DRM content like Netflix
   ];
 
