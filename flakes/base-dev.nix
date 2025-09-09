@@ -116,7 +116,9 @@ in
         size = 10000;
       };
 
-      eval "$(mise activate zsh)"
+      extraConfig = ''
+        eval "$(mise activate zsh)"
+      '';
 
       shellAliases = {
         ga = "git add --all";
