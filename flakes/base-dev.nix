@@ -20,7 +20,7 @@ in
     unzip
     firefox
     claude-code
-    python
+    python3
 #    widevine-cdm # for DRM content like Netflix
   ];
 
