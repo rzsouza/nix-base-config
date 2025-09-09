@@ -57,9 +57,26 @@ in
                 }
               }]
             }
+
+            env_change: {
+              PWD: [{|before, after|
+                if (which mise | is-empty) {
+                  return
+                }
+            
+                mise hook-env -s nu | evaluate
+              }]
+            }
+            
 	}
 
-	def git_current_branch [] {
+	# Initialize mise on shell startup
+        if not (which mise | is-empty) {
+          mise activate nu | save --force ~/.config/nushell/mise-init.nu
+          source ~/.config/nushell/mise-init.nu
+        }
+
+	def git_current_branch [] {}
           git branch --show-current
         }
       '';
