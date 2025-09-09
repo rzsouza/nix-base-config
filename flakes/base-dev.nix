@@ -116,7 +116,7 @@ in
         size = 10000;
       };
 
-      extraConfig = ''
+      initExtra = ''
         eval "$(mise activate zsh)"
       '';
 
