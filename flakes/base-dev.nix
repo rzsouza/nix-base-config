@@ -57,20 +57,8 @@ in
                 }
               }]
             }
-
-            env_change: {
-              PWD: [{|before, after|
-                if (which mise | is-empty) {
-                  return
-                }
-            
-                mise hook-env -s nu | evaluate
-              }]
-            }
-            
 	}
 
-	# Initialize mise on shell startup
         if not (which mise | is-empty) {
           mise activate nu | save --force ~/.config/nushell/mise-init.nu
           source ~/.config/nushell/mise-init.nu
@@ -127,6 +115,8 @@ in
         append = true;
         size = 10000;
       };
+
+      eval "$(mise activate zsh)"
 
       shellAliases = {
         ga = "git add --all";
