@@ -59,7 +59,7 @@ in
             }
 	
 
-	def git_current_branch [] {}
+	def git_current_branch [] {
           git branch --show-current
         }
       '';
