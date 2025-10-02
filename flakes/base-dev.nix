@@ -112,7 +112,7 @@ in
         size = 10000;
       };
 
-      initExtra = ''
+      initContent = ''
         eval "$(mise activate zsh)"
       '';
 
